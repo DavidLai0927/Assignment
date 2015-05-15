@@ -41,34 +41,45 @@ namespace Mod_9_Homework
 
         private void btnPrevious_Click(object sender, RoutedEventArgs e)
         {
-            if (indexOfList > 0)
+            if (indexOfList >= 0)
             {
-                indexOfList--;
                 txtFirstName.Text = studentList[indexOfList].firstName;
                 txtLastName.Text = studentList[indexOfList].lastName;
                 txtCity.Text = studentList[indexOfList].city;
-                if (indexOfList == 0)
-                    btnPrevious.IsEnabled = false;
+                indexOfList--;
             }
-            if (btnNext.IsEnabled == false)
-                btnNext.IsEnabled = true;
+            else if (indexOfList == -1)
+            {
+                indexOfList = studentList.Count - 1;
+                txtFirstName.Text = studentList[indexOfList].firstName;
+                txtLastName.Text = studentList[indexOfList].lastName;
+                txtCity.Text = studentList[indexOfList].city;
+                indexOfList--;
+            }
+                
             
             
         }
 
         private void btnNext_Click(object sender, RoutedEventArgs e)
         {
-            if (indexOfList < studentList.Count-1)
-            {
-                indexOfList++;
+            if (indexOfList <= studentList.Count-1)
+            {         
                 txtFirstName.Text = studentList[indexOfList].firstName;
                 txtLastName.Text = studentList[indexOfList].lastName;
                 txtCity.Text = studentList[indexOfList].city;
-                if (indexOfList == studentList.Count - 1)
-                    btnPrevious.IsEnabled = false;
+                indexOfList++;
             }
-            if (btnPrevious.IsEnabled == false)
-                btnPrevious.IsEnabled = true;
+            else if (indexOfList == studentList.Count)
+            {
+                indexOfList = 0;
+                txtFirstName.Text = studentList[indexOfList].firstName;
+                txtLastName.Text = studentList[indexOfList].lastName;
+                txtCity.Text = studentList[indexOfList].city;
+                indexOfList++;
+            }
+                
+            
         }
     }
 
