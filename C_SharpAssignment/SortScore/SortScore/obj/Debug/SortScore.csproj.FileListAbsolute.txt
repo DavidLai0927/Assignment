@@ -1,0 +1,6 @@
+c:\users\davidlai\documents\visual studio 2012\SortScore\SortScore\bin\Debug\SortScore.exe.config
+c:\users\davidlai\documents\visual studio 2012\SortScore\SortScore\bin\Debug\SortScore.exe
+c:\users\davidlai\documents\visual studio 2012\SortScore\SortScore\bin\Debug\SortScore.pdb
+c:\users\davidlai\documents\visual studio 2012\SortScore\SortScore\obj\Debug\SortScore.csprojResolveAssemblyReference.cache
+c:\users\davidlai\documents\visual studio 2012\SortScore\SortScore\obj\Debug\SortScore.exe
+c:\users\davidlai\documents\visual studio 2012\SortScore\SortScore\obj\Debug\SortScore.pdb
