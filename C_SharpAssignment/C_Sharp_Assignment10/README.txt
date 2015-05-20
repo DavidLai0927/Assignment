@@ -1,0 +1,1 @@
+PART1 部分 沒有Washington匹配 改用German
