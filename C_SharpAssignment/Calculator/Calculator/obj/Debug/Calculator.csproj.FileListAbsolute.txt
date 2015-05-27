@@ -1,0 +1,6 @@
+c:\users\davidlai\documents\visual studio 2012\Calculator\Calculator\bin\Debug\Calculator.exe.config
+c:\users\davidlai\documents\visual studio 2012\Calculator\Calculator\bin\Debug\Calculator.exe
+c:\users\davidlai\documents\visual studio 2012\Calculator\Calculator\bin\Debug\Calculator.pdb
+c:\users\davidlai\documents\visual studio 2012\Calculator\Calculator\obj\Debug\Calculator.csprojResolveAssemblyReference.cache
+c:\users\davidlai\documents\visual studio 2012\Calculator\Calculator\obj\Debug\Calculator.exe
+c:\users\davidlai\documents\visual studio 2012\Calculator\Calculator\obj\Debug\Calculator.pdb
