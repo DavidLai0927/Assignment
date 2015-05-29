@@ -4,3 +4,6 @@ c:\users\davidlai\documents\visual studio 2012\Calculator\Calculator\bin\Debug\C
 c:\users\davidlai\documents\visual studio 2012\Calculator\Calculator\obj\Debug\Calculator.csprojResolveAssemblyReference.cache
 c:\users\davidlai\documents\visual studio 2012\Calculator\Calculator\obj\Debug\Calculator.exe
 c:\users\davidlai\documents\visual studio 2012\Calculator\Calculator\obj\Debug\Calculator.pdb
+C:\Users\davidlai\Documents\Assignment\C_SharpAssignment\Calculator\Calculator\bin\Debug\Calculator.exe.config
+C:\Users\davidlai\Documents\Assignment\C_SharpAssignment\Calculator\Calculator\obj\Debug\Calculator.exe
+C:\Users\davidlai\Documents\Assignment\C_SharpAssignment\Calculator\Calculator\obj\Debug\Calculator.pdb

@@ -31,34 +31,12 @@ namespace Calculator
     {
         Stack<char> myOp = new Stack<char>();
         Stack<double> myNum = new Stack<double>();
-        double l, r, temp = 0 , decTemp = 1 , dec = 0;
+        double l, r;
         char buffer = 'n';
         public void read(char input)
         {
             try
             {
-                if (buffer != 'n')
-                {
-                    if (input != '.' && ((Convert.ToInt32(input) - '0') < 0 || (Convert.ToInt32(input) - '0') > 9))
-                    {
-                        temp += dec;
-                        myNum.Push(temp);
-                        dec = 0;
-                        temp = 0;
-                        decTemp = 1;
-                        buffer = 'n';
-                    }
-                    else if (buffer == '.')
-                    {
-                        decTemp /= 10;
-                        dec += (Convert.ToInt32(input) - '0') * decTemp;
-                    }
-                    else if (input != '.')
-                    {
-                        temp = temp * 10 + (Convert.ToInt32(input) - '0');
-                    }
-                   
-                }
                 if (input == '+' || input == '-')
                 {
                     while (myOp.Count() != 0 && myOp.Peek() != '(')
@@ -137,14 +115,7 @@ namespace Calculator
                 else if (input == '\t' || input == ' ' || input == '\r')
                 {
                 }
-                else if (input == '.' || ((Convert.ToInt32(input) - '0') >= 0 && (Convert.ToInt32(input) - '0') <= 9))
-                {
-                    if (buffer == 'n')
-                        temp = (Convert.ToInt32(input) - '0');
-                    if (buffer != '.')
-                        buffer = input;
-
-                }
+    
                 else if (input == 'q' || input == 'Q')
                 {
                     System.Environment.Exit(0);
