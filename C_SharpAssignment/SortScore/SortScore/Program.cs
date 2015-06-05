@@ -180,21 +180,45 @@ namespace SortScore
         //根據自訂方法 sort後輸出到 outputPath
         static void SortAndWrite()
         {
-
+            string result;
+            double totalTime = 0;
+            stw.Reset(); stw.Start();
             studentList.Sort(new myComparer((int)Grade.chinese));
+            result = stw.Elapsed.TotalMilliseconds.ToString();
+            Console.WriteLine("Sort of Chinese Done , Time Elapsed " + result + " msec");
             WriteTofile(outfile[(int)Grade.chinese], (int)Grade.chinese);
+            totalTime += Convert.ToDouble(result);
+            stw.Reset(); stw.Start();
             studentList.Sort(new myComparer((int)Grade.english));
+            result = stw.Elapsed.TotalMilliseconds.ToString();
+            Console.WriteLine("Sort of English Done , Time Elapsed " + result + " msec");
             WriteTofile(outfile[(int)Grade.english], (int)Grade.english);
+            totalTime += Convert.ToDouble(result);
+            stw.Reset(); stw.Start();
             studentList.Sort(new myComparer((int)Grade.math));
+            result = stw.Elapsed.TotalMilliseconds.ToString();
+            Console.WriteLine("Sort of Math Done , Time Elapsed " + result + " msec");
             WriteTofile(outfile[(int)Grade.math], (int)Grade.math);
+            totalTime += Convert.ToDouble(result);
+            stw.Reset(); stw.Start();
             studentList.Sort(new myComparer((int)Grade.physic));
+            result = stw.Elapsed.TotalMilliseconds.ToString();
+            Console.WriteLine("Sort of Physic Done , Time Elapsed " + result + " msec");
             WriteTofile(outfile[(int)Grade.physic], (int)Grade.physic);
+            totalTime += Convert.ToDouble(result);
+            stw.Reset(); stw.Start();
             studentList.Sort(new myComparer((int)Grade.chemistry));
+            result = stw.Elapsed.TotalMilliseconds.ToString();
+            Console.WriteLine("Sort of Chemistry Done , Time Elapsed " + result + " msec");
             WriteTofile(outfile[(int)Grade.chemistry], (int)Grade.chemistry);
+            totalTime += Convert.ToDouble(result);
+            stw.Reset(); stw.Start();
             studentList.Sort(new myComparer((int)Grade.avg));
+            result = stw.Elapsed.TotalMilliseconds.ToString();
+            Console.WriteLine("Sort of Average Done , Time Elapsed " + result + " msec");
+            totalTime += Convert.ToDouble(result);
             WriteTofile(outfile[(int)Grade.avg], (int)Grade.avg);
-
-
+            Console.WriteLine("ALL Task Done, Time Elapsed " + totalTime + " msec");
         }
 
         //SortAndWrite() 呼叫 依據參數輸出不同檔案
@@ -202,7 +226,7 @@ namespace SortScore
         {
             //rank由比較上一個分數的名次 若相同或較小則+1 需要例子來想
             f = outputPath + f;
-            int rank = 1;
+            int rank = 0, cnt = 0;
             try
             {
                 switch (which)
@@ -212,9 +236,17 @@ namespace SortScore
                         {
                             foreach (Student sd in studentList)
                             {
-                                if (sd.chinese < studentList[rank].chinese)
-                                    rank++;
-                                sw.WriteLine("{0},{1},{2},{3}", sd.id, sd.name, sd.chinese, rank);
+                                if (sd.chinese == studentList[rank].chinese)
+                                    cnt++;
+                                else if (sd.chinese < studentList[rank].chinese)
+                                {
+                                    if (cnt == 0)
+                                        rank++;
+                                    rank += cnt;
+                                    cnt = 1;
+                                }
+
+                                sw.WriteLine("{0},{1},{2},{3}", sd.id, sd.name, sd.chinese, rank + 1);
                             }
                         }
                         break;
@@ -223,9 +255,16 @@ namespace SortScore
                         {
                             foreach (Student sd in studentList)
                             {
-                                if (sd.english < studentList[rank].english)
-                                    rank++;
-                                sw.WriteLine("{0},{1},{2},{3}", sd.id, sd.name, sd.english, rank);
+                                if (sd.english == studentList[rank].english)
+                                    cnt++;
+                                else if (sd.english < studentList[rank].english)
+                                {
+                                    if (cnt == 0)
+                                        rank++;
+                                    rank += cnt;
+                                    cnt = 1;
+                                }
+                                sw.WriteLine("{0},{1},{2},{3}", sd.id, sd.name, sd.english, rank + 1);
                             }
                         }
                         break;
@@ -234,9 +273,16 @@ namespace SortScore
                         {
                             foreach (Student sd in studentList)
                             {
-                                if (sd.math < studentList[rank].math)
-                                    rank++;
-                                sw.WriteLine("{0},{1},{2},{3}", sd.id, sd.name, sd.math, rank);
+                                if (sd.math == studentList[rank].math)
+                                    cnt++;
+                                else if (sd.math < studentList[rank].math)
+                                {
+                                    if (cnt == 0)
+                                        rank++;
+                                    rank += cnt;
+                                    cnt = 1;
+                                }
+                                sw.WriteLine("{0},{1},{2},{3}", sd.id, sd.name, sd.math, rank + 1);
                             }
                         }
                         break;
@@ -245,9 +291,16 @@ namespace SortScore
                         {
                             foreach (Student sd in studentList)
                             {
-                                if (sd.physic < studentList[rank].physic)
-                                    rank++;
-                                sw.WriteLine("{0},{1},{2},{3}", sd.id, sd.name, sd.physic, rank);
+                                if (sd.physic == studentList[rank].physic)
+                                    cnt++;
+                                else if (sd.physic < studentList[rank].physic)
+                                {
+                                    if (cnt == 0)
+                                        rank++;
+                                    rank += cnt;
+                                    cnt = 1;
+                                }
+                                sw.WriteLine("{0},{1},{2},{3}", sd.id, sd.name, sd.physic, rank + 1);
                             }
                         }
                         break;
@@ -256,9 +309,16 @@ namespace SortScore
                         {
                             foreach (Student sd in studentList)
                             {
-                                if (sd.chemistry < studentList[rank].chemistry)
-                                    rank++;
-                                sw.WriteLine("{0},{1},{2},{3}", sd.id, sd.name, sd.chemistry, rank);
+                                if (sd.chemistry == studentList[rank].chemistry)
+                                    cnt++;
+                                else if (sd.chemistry < studentList[rank].chemistry)
+                                {
+                                    if (cnt == 0)
+                                        rank++;
+                                    rank += cnt;
+                                    cnt = 1;
+                                }
+                                sw.WriteLine("{0},{1},{2},{3}", sd.id, sd.name, sd.chemistry, rank + 1);
                             }
                         }
                         break;
@@ -267,9 +327,16 @@ namespace SortScore
                         {
                             foreach (Student sd in studentList)
                             {
-                                if (sd.avg < studentList[rank].avg)
-                                    rank++;
-                                sw.WriteLine("{0},{1},{2},{3}", sd.id, sd.name, sd.avg, rank);
+                                if (sd.avg == studentList[rank].avg)
+                                    cnt++;
+                                else if (sd.avg < studentList[rank].avg)
+                                {
+                                    if (cnt == 0)
+                                        rank++;
+                                    rank += cnt;
+                                    cnt = 1;
+                                }
+                                sw.WriteLine("{0},{1},{2},{3}", sd.id, sd.name, sd.avg, rank + 1);
                             }
                         }
                         break;
@@ -282,22 +349,23 @@ namespace SortScore
                 Console.ReadLine(); // Pause
                 System.Environment.Exit(System.Environment.ExitCode);
             }
+            finally
+            {
+                
+            }
 
         }
 
         //Main() 使用者互動
         static void Main(string[] args)
         {
-            stw.Reset();
+            
             ReadFile();
             SplitInput();
             SortAndWrite();
+  
 
-            stw.Start();
-            string result = stw.Elapsed.TotalMilliseconds.ToString();
-
-            Console.WriteLine("\r\n\r\nWrite output to " + outputPath);
-            Console.WriteLine("Done! Total Time Elapsed " + result + " msec");
+            Console.WriteLine("\r\n\r\nWrite output to " + outputPath);  
             Console.WriteLine("Press any key to leave...");
             Console.ReadLine(); // Pause
         }
