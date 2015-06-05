@@ -6,76 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace C_Sharp_Assignment6
+namespace C_Sharp_Assignment7
 {
-    public class Person
-    {
-        public string firstName { get; set; }
-        public string lastName { get; set; }
-        public bool male { get; set; }
-    }
-
-    public class Student : Person
-    {
-        public Stack<int> score = new Stack<int>();
-        public void TakeTest()
-        {
-            Console.WriteLine("Student {0} takes test.", lastName);
-        }
-    }
-
-    public class Teacher : Person
-    {
-        public void GradeTest()
-        {
-            Console.WriteLine("Teacher {0} grade test.", lastName);
-        }
-    }
-
-
-
-
-    public class UProgram
-    {
-        public UProgram(string n)
-        {
-            this.name = n;
-        }
-        public string name { get; set; }
-        public string objective { get; set; }
-        public string owner { get; set; }
-        public Degree degree { get; set; }
-    }
-
-    public class Degree
-    {
-        public Degree(string n)
-        {
-            this.deg = n;
-        }
-        public string deg;
-        public Course course { get; set; }
-    }
-
-    public class Course
-    {
-        public string name { get; set; }
-        //public string teacher { get; set; }
-        public string time { get; set; }
-        public ArrayList students = new ArrayList();
-        public Teacher[] teachers = new Teacher[3];
-    }
-
-    public class myComparerClass : IComparer
-    {
-        int IComparer.Compare(Object x, Object y)
-        {
-            Student a = (Student)x; Student b = (Student)y;
-            return ((new CaseInsensitiveComparer()).Compare(a.firstName, b.firstName));
-        }
-    }
-
-    
 
     class Program
     {
@@ -99,17 +31,17 @@ namespace C_Sharp_Assignment6
             student1.score.Push(60); student1.score.Push(70); student1.score.Push(80); student1.score.Push(90); student1.score.Push(100);
             student2.score.Push(100); student2.score.Push(10); student2.score.Push(10); student2.score.Push(100); student2.score.Push(100);
             student3.score.Push(60); student3.score.Push(50); student3.score.Push(40); student3.score.Push(30); student3.score.Push(20);
-            Course cource = new Course();
-            cource.name = "Programming with C#";
-            cource.students.Add(student1);
-            cource.students.Add(student2);
-            cource.students.Add(student3);
-            ListStudents(cource);
+            Course course = new Course();
+            course.name = "Programming with C#";
+            course.students.Add(student1);
+            course.students.Add(student2);
+            course.students.Add(student3);
+            ListStudents(course);
             Console.WriteLine();
             //challenge below
-            IComparer myComparer = new myComparerClass();
-            cource.students.Sort(myComparer);
-            ListStudents(cource);
+            IComparer myComparer = new MyComparerClass();
+            course.students.Sort(myComparer);
+            ListStudents(course);
             Console.WriteLine();
             //bonus challenfe below
             Stack<int> tmp = new Stack<int>();
@@ -118,7 +50,7 @@ namespace C_Sharp_Assignment6
             student1.score.Peek();
             student1.score.Push(tmp.Pop());
             student1.score.Push(tmp.Pop());
-            foreach (Student sd in cource.students)
+            foreach (Student sd in course.students)
             {
                 Console.Write("First Name: {0} , Last Name: {1} Grade : ", sd.firstName, sd.lastName);
                 while (sd.score.Count != 0)

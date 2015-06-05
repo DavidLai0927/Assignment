@@ -14,100 +14,7 @@ using System.Threading.Tasks;
 
 namespace C_Sharp_Assignment8
 {
-    public class Person
-    {
-        public string firstName { get; set; }
-        public string lastName { get; set; }
-        public bool male { get; set; }
-    }
-
-    public class Student : Person
-    {
-        public List<int> Grades = new List<int>();
-        public void TakeTest()
-        {
-            Console.WriteLine("Student {0} takes test.", lastName);
-        }
-    }
-
-    public class Teacher : Person
-    {
-        public void GradeTest()
-        {
-            Console.WriteLine("Teacher {0} grade test.", lastName);
-        }
-    }
-
-
-
-
-    public class UProgram
-    {
-        public UProgram(string n)
-        {
-            this.name = n;
-        }
-        public string name { get; set; }
-        public string objective { get; set; }
-        public string owner { get; set; }
-        public Degree degree { get; set; }
-    }
-
-    public class Degree
-    {
-        public Degree(string n)
-        {
-            this.deg = n;
-        }
-        public string deg;
-        public Course course { get; set; }
-    }
-
-    public class Course
-    {
-        public string name { get; set; }
-        //public string teacher { get; set; }
-        public string time { get; set; }
-        //public ArrayList students = new ArrayList();
-        public List<Student> students = new List<Student>();
-        public Teacher[] teachers = new Teacher[3];
-    }
-
-    public class myComparerClass : IComparer<Student>
-    {
-        public int Compare(Student x, Student y)
-        {
-            if (x == null)
-            {
-                if (y == null)
-                {
-                    return 0;
-                }
-                else
-                {
-                    return -1;
-                }
-
-            }
-            else
-            {
-                if (y == null)
-                {
-                    return 1;
-                }
-                else
-                {
-                    Student a = x; Student b = y;
-                    return ((new CaseInsensitiveComparer()).Compare(a.firstName, b.firstName));
-                }
-            }
-
-            
-        }
-    }
-
-
-
+ 
     class Program
     {
         static void ListStudents(Course cource)
@@ -137,7 +44,7 @@ namespace C_Sharp_Assignment8
             cource.students.Add(student3);
             ListStudents(cource);
             Console.WriteLine();
-            myComparerClass myComparer = new myComparerClass();
+            MyComparerClass myComparer = new MyComparerClass();
             cource.students.Sort(myComparer);
             ListStudents(cource);
             Console.WriteLine();

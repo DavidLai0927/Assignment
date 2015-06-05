@@ -27,3 +27,13 @@ C:\Users\davidlai\Desktop\Mod11_Assignment\Mod11_Assignment\obj\Debug\Mod11_Assi
 C:\Users\davidlai\Documents\Assignment\C_SharpAssignment\C_Sharp_Assignment11\Mod11_Assignment\Mod11_Assignment\bin\Debug\Mod11_Assignment.exe.config
 C:\Users\davidlai\Documents\Assignment\C_SharpAssignment\C_Sharp_Assignment11\Mod11_Assignment\Mod11_Assignment\obj\Debug\Mod11_Assignment.exe
 C:\Users\davidlai\Documents\Assignment\C_SharpAssignment\C_Sharp_Assignment11\Mod11_Assignment\Mod11_Assignment\obj\Debug\Mod11_Assignment.pdb
+C:\Users\davidlai\Documents\Assignment\C_SharpAssignment\C_Sharp_Assignment11\Mod11_Assignment\Mod11_Assignment\bin\Debug\Mod11_Assignment.exe
+C:\Users\davidlai\Documents\Assignment\C_SharpAssignment\C_Sharp_Assignment11\Mod11_Assignment\Mod11_Assignment\bin\Debug\Mod11_Assignment.pdb
+C:\Users\davidlai\Documents\Assignment\C_SharpAssignment\C_Sharp_Assignment11\Mod11_Assignment\Mod11_Assignment\obj\Debug\Mod11_Assignment.csprojResolveAssemblyReference.cache
+C:\Users\davidlai\Documents\Assignment\C_SharpAssignment\C_Sharp_Assignment11\Mod11_Assignment\Mod11_Assignment\obj\Debug\MainWindow.baml
+C:\Users\davidlai\Documents\Assignment\C_SharpAssignment\C_Sharp_Assignment11\Mod11_Assignment\Mod11_Assignment\obj\Debug\MainWindow.g.cs
+C:\Users\davidlai\Documents\Assignment\C_SharpAssignment\C_Sharp_Assignment11\Mod11_Assignment\Mod11_Assignment\obj\Debug\App.g.cs
+C:\Users\davidlai\Documents\Assignment\C_SharpAssignment\C_Sharp_Assignment11\Mod11_Assignment\Mod11_Assignment\obj\Debug\Mod11_Assignment_MarkupCompile.cache
+C:\Users\davidlai\Documents\Assignment\C_SharpAssignment\C_Sharp_Assignment11\Mod11_Assignment\Mod11_Assignment\obj\Debug\Mod11_Assignment.g.resources
+C:\Users\davidlai\Documents\Assignment\C_SharpAssignment\C_Sharp_Assignment11\Mod11_Assignment\Mod11_Assignment\obj\Debug\Mod11_Assignment.Properties.Resources.resources
+C:\Users\davidlai\Documents\Assignment\C_SharpAssignment\C_Sharp_Assignment11\Mod11_Assignment\Mod11_Assignment\obj\Debug\Mod11_Assignment.csproj.GenerateResource.Cache

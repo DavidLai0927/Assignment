@@ -37,49 +37,43 @@ namespace Mod_9_Homework
             txtFirstName.Clear();
             txtLastName.Clear();
             txtCity.Clear();
+            indexOfList++;
         }
 
         private void btnPrevious_Click(object sender, RoutedEventArgs e)
         {
-            if (indexOfList >= 0)
-            {
-                txtFirstName.Text = studentList[indexOfList].firstName;
-                txtLastName.Text = studentList[indexOfList].lastName;
-                txtCity.Text = studentList[indexOfList].city;
-                indexOfList--;
-            }
-            else if (indexOfList == -1)
-            {
-                indexOfList = studentList.Count - 1;
-                txtFirstName.Text = studentList[indexOfList].firstName;
-                txtLastName.Text = studentList[indexOfList].lastName;
-                txtCity.Text = studentList[indexOfList].city;
-                indexOfList--;
-            }
-                
-            
-            
+                if(indexOfList > studentList.Count - 1 )
+                    indexOfList = 0;
+                if(indexOfList < 0)
+                    indexOfList = studentList.Count - 1;
+                if (studentList.Count != 0)
+                {  
+                    txtFirstName.Text = studentList[indexOfList].firstName;
+                    txtLastName.Text = studentList[indexOfList].lastName;
+                    txtCity.Text = studentList[indexOfList].city;
+                    if(indexOfList == 0)
+                        indexOfList = studentList.Count - 1;
+                    else
+                        indexOfList--;
+                }
         }
 
         private void btnNext_Click(object sender, RoutedEventArgs e)
         {
-            if (indexOfList <= studentList.Count-1)
-            {         
-                txtFirstName.Text = studentList[indexOfList].firstName;
-                txtLastName.Text = studentList[indexOfList].lastName;
-                txtCity.Text = studentList[indexOfList].city;
-                indexOfList++;
-            }
-            else if (indexOfList == studentList.Count)
-            {
+            if (indexOfList > studentList.Count - 1)
                 indexOfList = 0;
+            if (indexOfList < 0)
+                indexOfList = studentList.Count - 1;
+            if (studentList.Count != 0)
+            {
                 txtFirstName.Text = studentList[indexOfList].firstName;
                 txtLastName.Text = studentList[indexOfList].lastName;
                 txtCity.Text = studentList[indexOfList].city;
-                indexOfList++;
+                if (indexOfList == studentList.Count - 1)
+                    indexOfList = 0;
+                else
+                    indexOfList++;
             }
-                
-            
         }
     }
 
