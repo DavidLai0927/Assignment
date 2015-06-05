@@ -161,9 +161,9 @@ namespace Calculator
             {
                 Console.WriteLine("\nsyntax error\n");
                 myOp.Clear();
-                myNum.Clear();
-                Console.ReadLine();
+                myNum.Clear(); 
                 Console.Write("> ");
+                Console.ReadLine();
             }
         }
 
